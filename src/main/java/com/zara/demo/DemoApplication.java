@@ -11,6 +11,7 @@ import org.springframework.core.env.Environment;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+/** @author LD */
 @SpringBootApplication
 public class DemoApplication {
 	public static Logger logger = LoggerFactory.getLogger(DemoApplication.class);

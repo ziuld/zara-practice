@@ -2,6 +2,7 @@ package com.zara.demo.models;
 
 import jakarta.persistence.*;
 
+/** @author LD */
 @Entity
 @Table(name = "GROUPS")
 public class Group {
