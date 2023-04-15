@@ -14,4 +14,10 @@ public class Constants {
     public static final String SPRING_PROPERTY_ENV = "spring.application.name";
     public static final String SPRING_PROPERTY_PORT = "server.port";
     public static final String SPRING_HTTP_PROTOCOL = "http";
+    public static final String NOT_FOUND = " product is not found";
+    public static final String JUMP_LINE_TEST = "\n------------------------------------------------------------------\n";
+    public static final String URL_API_PRICES = "/api/prices/";
+    public static final String URL_SEPARATOR = "/";
+
+    public static final String URL_LOCALHOST ="http://localhost:";
 }

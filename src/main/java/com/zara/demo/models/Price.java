@@ -1,15 +1,16 @@
 package com.zara.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-
+import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /** @author LD */
 @Getter
@@ -21,18 +22,17 @@ import java.time.LocalDate;
 @Table(name = "PRICES")
 public class Price implements Serializable {
 
+    @Serial
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "BRAND_ID", nullable = false)
-    private Group brandId;
 
     @Column(name = "START_DATE")
-    private LocalDate startDate;
+    private LocalDateTime startDate;
 
     @Column(name = "END_DATE")
-    private LocalDate endDate;
+    private LocalDateTime endDate;
 
     @Column(name = "PRICE_LIST")
     private Long priceListId;
@@ -48,5 +48,10 @@ public class Price implements Serializable {
 
     @Column(name = "CURR")
     private String currency;
+
+    @ManyToOne()
+    @JoinColumn(name = "BRAND_ID")
+    @JsonBackReference
+    private Brand brand;
 
 }
