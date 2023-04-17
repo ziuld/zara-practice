@@ -27,6 +27,7 @@ import static org.mockito.Mockito.*;
  * TEST of management of prices
  * @author LD
  */
+@ExtendWith(MockitoExtension.class)
 public class PriceServiceImplTest{
 
     @InjectMocks
@@ -42,7 +43,6 @@ public class PriceServiceImplTest{
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this);
         date = LocalDateTime.parse("2020-06-14T10:00");
         Price expectedPrice = new Price();
         brand=new Brand();
@@ -56,7 +56,6 @@ public class PriceServiceImplTest{
         expectedPrice.setStartDate(LocalDateTime.parse("2020-12-31T23:59"));
         expectedPrice.setPriority(0);
         expectedPrice.setCurrency("EUR");
-
         priceDetails = new ArrayList<>();
         priceDetails.add(expectedPrice);
     }
