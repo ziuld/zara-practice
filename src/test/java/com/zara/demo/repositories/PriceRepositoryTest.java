@@ -6,10 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ import static org.mockito.Mockito.*;
  * TEST of management of prices
  * @author LD
  */
-@ExtendWith(SpringExtension.class)
+@ExtendWith(MockitoExtension.class)
 @DataJpaTest
 public class PriceRepositoryTest {
 
@@ -35,7 +34,6 @@ public class PriceRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this);
         brand = new Brand();
         brand.setBrandId(1L);
     }
